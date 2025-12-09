@@ -1,13 +1,13 @@
-# 🌿 IoT‑Based Soil Sensor Network for Real‑Time Anomaly Detection
+# IoT‑Based Soil Sensor Network for Real‑Time Anomaly Detection
 
-An Arduino + ThingSpeak integrated IoT system for monitoring **soil pH** and **CO₂ levels** in real time, designed to optimize greenhouse farming and enable early anomaly detection.
+An Arduino + ThingSpeak integrated IoT system for monitoring soil pH and CO₂ levels in real time, designed to optimize greenhouse farming and enable early anomaly detection.
 
 ---
 
-## 🧩 Overview
+## Overview
 
-Monitoring **soil pH** and **CO₂** is crucial for maintaining optimal plant growth in controlled greenhouses.  
-This project implements a real‑time network of IoT sensors connected to the **ThingSpeak cloud platform** for continuous monitoring, anomaly detection, and automated alerts.
+Monitoring soil pH and CO₂ is crucial for maintaining optimal plant growth in controlled greenhouses.  
+This project implements a real‑time network of IoT sensors connected to the ThingSpeak cloud platform for continuous monitoring, anomaly detection, and automated alerts.
 
 **Built with:**
 - **Arduino Uno** (simulated in Tinkercad)
@@ -18,18 +18,18 @@ This project implements a real‑time network of IoT sensors connected to the **
 
 ---
 
-## ⚙️ Sensor Configuration
+## Sensor Configuration
 
 | Parameter | Normal Range | Alert Threshold |
 |------------|---------------|----------------|
 | pH | 5.5 – 7.0 | < 5.0 or > 7.5 |
 | CO₂ | 500 – 1500 ppm | < 300 or > 1800 ppm |
 
-📡 Data are transmitted to **ThingSpeak** using simple HTTP `GET` requests—no additional Wi‑Fi libraries required.
+Data are transmitted to ThingSpeak using simple HTTP `GET` requests—no additional Wi‑Fi libraries required.
 
 ---
 
-## 📊 Datasets
+## Datasets
 
 - **Source:** MAPCO₂ buoy, NOAA Ship *Ronald H. Brown* (South Georgia Island, 2008 – SO_GasEx project)
 - **Selected variables:**
@@ -37,11 +37,11 @@ This project implements a real‑time network of IoT sensors connected to the **
   - `pH_1m` → pH (1 m depth)
   - `Temp_5m` → Temperature (5 m depth)
 
-These variables were repurposed to simulate soil‑environment behavior for **anomaly detection** experiments.
+These variables were repurposed to simulate soil‑environment behavior for anomaly detection experiments.
 
 ---
 
-## 🧰 Data Preprocessing (Google Colab)
+## Data Preprocessing (Google Colab)
 
 The MAPCO₂–SAMI dataset was cleaned and structured for ThingSpeak in  
 [`Colab/MAPCO2_SAMI_Dataset_To_ThingSpeak.ipynb`](Colab/MAPCO2_SAMI_Dataset_To_ThingSpeak.ipynb).
@@ -51,12 +51,12 @@ This notebook:
 - Creates ISO timestamps (`created_at`)  
 - Removes missing values (`nd` → NaN)  
 - Calculates rolling averages and differences  
-- Renames columns to match **ThingSpeak fields** (`field1`, `field2`, `field3`)  
+- Renames columns to match ThingSpeak fields (`field1`, `field2`, `field3`)  
 - Outputs a ready‑to‑upload CSV for your ThingSpeak channels
 
 ---
 
-## 📈 Anomaly Detection Results
+## Anomaly Detection Results
 
 ### CO₂ Analysis
 - Notable deviations: **−20.1 ppm** and **+6.6 ppm**
@@ -71,17 +71,18 @@ CO₂ variability is higher than pH stability, highlighting possible ventilation
 
 ---
 
-## ⚠️ Alerts & Automation
+## Alerts & Automation
 
-- Anomalous readings trigger **real‑time email notifications**
+- Anomalous readings trigger real‑time email notifications
 - Alerts categorize causes:
   - Potential root‑respiration issues  
   - Excessive photosynthetic CO₂ uptake  
 - Early warnings allow farmers to apply corrective actions before yield is affected.
+* **I'm still working on ThingSpeak charts, that's why It's not published yet.**
 
 ---
 
-## ☁️ ThingSpeak Channels
+## ThingSpeak Channels
 
 | Channel | Purpose | Channel ID | Read API Key |
 |----------|----------|-------------|--------------|
@@ -91,7 +92,7 @@ CO₂ variability is higher than pH stability, highlighting possible ventilation
 
 ---
 
-## 🧩 Simulation
+## Simulation
 
 - [Tinkercad Simulation Link](https://www.tinkercad.com/things/fFUJdAnFs2U-iot-project-iot-soil-sensor-network/editel?sharecode=STVfS4FUMvoL1q-AoY18LC7NOSmIcEi4lP1AU4sPcyY)  
   *(Log in required to view and simulate.)*  
@@ -99,18 +100,18 @@ CO₂ variability is higher than pH stability, highlighting possible ventilation
 
 ---
 
-## 🧠 Conclusion
+## Conclusion
 
 The project demonstrates a complete IoT pipeline:
 - Real‑time soil sensor acquisition  
 - Cloud‑based anomaly detection and analytics  
 - Automated alerts and decision support  
 
-Together, these tools enable **precision agriculture** and sustainable greenhouse management.
+Together, these tools enable precision agriculture and sustainable greenhouse management.
 
 ---
 
-## 📜 License
+## License
 
 Released under the **MIT License**.  
  Feel free to use or adapt for educational and research purposes.
